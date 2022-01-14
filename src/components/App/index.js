@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
+import UserDisplay from '../UserDisplay';
 
 function App() {
   const [inputText, setInputText] = useState('');
@@ -17,11 +19,22 @@ function App() {
   }
 
   return (
-  <div>
-    <h2>Search GitHub username</h2>
-    <input type="text" onChange={ handleChange }></input>
-    <button onClick={ () => { fetchUser(inputText); } }>Search</button>
-  </div>);
+  <Routes>
+    <Route path="/" element={
+      <div>
+        <h2>Search GitHub username</h2>
+        <input type="text" onChange={ handleChange }></input>
+        <Link to="/user">
+          <button onClick={ () => { fetchUser(inputText); } }>Search</button>
+        </Link>
+      </div>
+    } />
+    <Route path="/user" element={
+      <UserDisplay />
+    }>
+    </Route>
+  </Routes>
+  );
 }
 
 export default App;

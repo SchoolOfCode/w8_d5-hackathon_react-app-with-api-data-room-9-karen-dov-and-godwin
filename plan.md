@@ -1,3 +1,6 @@
+# Routes
+Use react routes for navigating between the initial search and user display
+
 # INITIAL SEARCH PAGE (App component)
  - make whole page as a single component with these inside:
     - text, input, button
