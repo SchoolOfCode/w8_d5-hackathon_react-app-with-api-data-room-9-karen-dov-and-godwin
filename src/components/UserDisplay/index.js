@@ -11,7 +11,7 @@ function UserDisplay({ userJson }) {
         <p>{ userJson.email }</p>
 
         <ul>
-            <li><a src={ userJson.blog }>Website</a></li>
+            <li><a href={ userJson.blog }>Website</a></li>
 
             <li>Followers: { userJson.followers }</li>
             <li>Following: { userJson.following }</li>
