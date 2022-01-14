@@ -30,7 +30,7 @@ function App() {
       </div>
     } />
     <Route path="/user" element={
-      <UserDisplay />
+      <UserDisplay userJson={ userJson } />
     }>
     </Route>
   </Routes>
