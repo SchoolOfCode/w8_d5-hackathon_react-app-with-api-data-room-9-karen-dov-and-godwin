@@ -9,16 +9,18 @@ function App() {
     setInputText(event.target.value);
   }
 
-  function fetchUser(query) {
-    console.log(query);
+  async function fetchUser(query) {
+    const fetchPromise = await fetch(`https://api.github.com/users/${query}`);
+    const data = await fetchPromise.json();
+
+    setUserJson(data);
   }
 
   return (
   <div>
     <h2>Search GitHub username</h2>
     <input type="text" onChange={ handleChange }></input>
-    <button onClick={ () => { fetchUser('Test'); } }>Search</button>
-    <p>{userJson.length}</p>
+    <button onClick={ () => { fetchUser(inputText); } }>Search</button>
   </div>);
 }
 
