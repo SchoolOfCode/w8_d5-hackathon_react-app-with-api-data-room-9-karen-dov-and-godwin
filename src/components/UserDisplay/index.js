@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 
 function UserDisplay({ userJson }) {
     return (
     <div>
+        <Link to='/'><button>Go back</button></Link>
         <img src={userJson.avatar_url} alt={ userJson.name } />
         <h2>{ userJson.name } ({ userJson.login})</h2>
         <p>{ userJson.email }</p>
